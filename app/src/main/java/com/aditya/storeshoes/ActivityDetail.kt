@@ -26,13 +26,14 @@ class ActivityDetail : AppCompatActivity() {
             .load(image)
             .into(imgDetail);
 
-//        binding.tvDetail.text = nama
-//        binding.tvPrice.text = harga
+        binding.tvDetail.text = nama
+        binding.tvPrice.text = harga
 
 
         binding.imgBack.setOnClickListener {
             val intent = Intent(this@ActivityDetail, MainActivity::class.java)
             startActivity(intent)
+
         }
 
 //            binding.btnBuy.setOnClickListener {

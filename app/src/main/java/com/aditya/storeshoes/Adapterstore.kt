@@ -1,4 +1,5 @@
 package com.aditya.storeshoes
+
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
@@ -15,7 +16,7 @@ import com.bumptech.glide.Glide
 
 class Adapterstore(
     private val onClick: (Store) -> Unit
-): ListAdapter<Store, Adapterstore.ViewHOlder>(DIF_CALLBACK){
+) : ListAdapter<Store, Adapterstore.ViewHOlder>(DIF_CALLBACK) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHOlder {
@@ -32,7 +33,7 @@ class Adapterstore(
         private val binding: ItemStoreBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Store) {
-            binding.tvPrice.text = data.harga.toString()
+            binding.tvPrice.text = data.harga.toInt().toString()
             Glide.with(itemView.context)
                 .load(data.image)
                 .error(android.R.color.darker_gray)
@@ -43,7 +44,6 @@ class Adapterstore(
             }
         }
     }
-
 
 
     companion object {
@@ -59,5 +59,5 @@ class Adapterstore(
                 }
 
             }
-         }
     }
+}

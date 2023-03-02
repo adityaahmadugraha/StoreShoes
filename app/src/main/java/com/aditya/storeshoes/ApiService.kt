@@ -7,10 +7,21 @@ interface ApiService {
     @GET("produk/api_tampil_all.php")
     fun getStore(): Call<List<Store>>
 
-    @FormUrlEncoded
-    @PUT("produk/api_tampil_all.php")
-    fun putStore(
-    ): Call<List<Store>>
+    @POST("produk/api_tambah.php")
+    fun inputShoes(
+        @Body input : InputSepatu
+    ): Call<ServerResponse>
+
+//    @FormUrlEncoded
+//    @POST("produk/api_tampil_all.php")
+//    fun inputShoes(
+//        @Field("nama") nama: String,
+//        @Field("nomor") nomor: Int,
+//        @Field("warna") warna: String,
+//        @Field("harga") harga: Int,
+//        @Field("image") image: String,
+//    ): Call<ServerResponse>
+
 
     @FormUrlEncoded
     @POST("produk/api_tampil_all.php")
@@ -19,7 +30,7 @@ interface ApiService {
 
     @FormUrlEncoded
     @DELETE("produk/api_tampil_all.php")
-    fun deleteStore(
+    fun daleteShoes(
     ): Call<List<Store>>
 
 }
