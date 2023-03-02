@@ -3,12 +3,18 @@ package com.aditya.storeshoes
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aditya.storeshoes.ActivityPut.Companion.SUCCESINPUT
 import com.aditya.storeshoes.databinding.ActivityMainBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,11 +22,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mAdapter: Adapterstore
     private lateinit var viewModel: MainViewModel
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.lySwip.setOnRefreshListener {
+//          lifecycleScope.launch {
+//              delay(500)
+              binding.lySwip.isRefreshing=false
+              getData()
+          }
+//        }
 
 //        binding.imgDelete.setOnClickListener {
 //            val intent = Intent(this@MainActivity, ActivityPut::class.java)
@@ -60,13 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        viewModel.store.observe(this@MainActivity) { listData ->
-            Log.d("Response::::::", "onCreate: $listData")
-            mAdapter.submitList(listData)
-            binding.rvStore.adapter = mAdapter
-            binding.rvStore.layoutManager = LinearLayoutManager(this@MainActivity)
-            binding.rvStore.setHasFixedSize(true)
-        }
+        getData()
 
         viewModel.isLoading.observe(this@MainActivity) { isLoading ->
 
@@ -78,6 +86,18 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+    }
+
+    private fun getData() {
+        viewModel.getStore()
+        viewModel.store.observe(this@MainActivity) { listData ->
+            Log.d("Response::::::", "onCreate: $listData")
+            mAdapter.submitList(listData)
+            binding.rvStore.adapter = mAdapter
+            binding.rvStore.layoutManager = LinearLayoutManager(this@MainActivity)
+            binding.rvStore.setHasFixedSize(true)
+        }
+
     }
 
 }
