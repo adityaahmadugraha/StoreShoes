@@ -30,16 +30,13 @@ class ActivityDetail : AppCompatActivity() {
         binding.tvPrice.text = harga
 
 
-        binding.imgBack.setOnClickListener {
+        binding.btnBack.setOnClickListener {
             val intent = Intent(this@ActivityDetail, MainActivity::class.java)
             startActivity(intent)
 
         }
 
-//            binding.btnBuy.setOnClickListener {
-//                val intent = Intent(this@ActivityDetail, MainActivity::class.java)
-//                startActivity(intent)
-//        }
+
     }
 
 
