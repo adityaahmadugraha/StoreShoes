@@ -20,6 +20,9 @@ class MainViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
+    private val _deleteSepatu = MutableLiveData<ServerResponse>()
+    val deleteSepatu: LiveData<ServerResponse> = _deleteSepatu
+
 
     init {
         getStore()
@@ -59,6 +62,30 @@ class MainViewModel : ViewModel() {
                     val responseBody = response.body()
                     if (responseBody != null) {
                         _inputSepatu.value = responseBody
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
+                _isLoading.value = false
+                Log.d("Respons::::::::", t.message.toString())
+            }
+        })
+    }
+
+    fun deleteSepatu(id: String) {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().deleteShoes(id)
+        client.enqueue(object : retrofit2.Callback<ServerResponse> {
+            override fun onResponse(
+                call: Call<ServerResponse>,
+                response: Response<ServerResponse>
+            ) {
+                if (response.isSuccessful) {
+                    _isLoading.value = false
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        _deleteSepatu.value = responseBody
                     }
                 }
             }

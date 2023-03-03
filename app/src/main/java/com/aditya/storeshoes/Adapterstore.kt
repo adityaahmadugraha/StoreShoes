@@ -15,7 +15,8 @@ import com.aditya.storeshoes.databinding.ItemStoreBinding
 import com.bumptech.glide.Glide
 
 class Adapterstore(
-    private val onClick: (Store) -> Unit
+    private val onClick: (Store) -> Unit,
+    private val onLongClick: (Store) -> Unit
 ) : ListAdapter<Store, Adapterstore.ViewHOlder>(DIF_CALLBACK) {
 
 
@@ -41,6 +42,10 @@ class Adapterstore(
             binding.tvTitle.text = data.nama.toString()
             binding.cView.setOnClickListener {
                 onClick(data)
+            }
+            binding.cView.setOnLongClickListener {
+                onLongClick(data)
+                return@setOnLongClickListener true
             }
         }
     }

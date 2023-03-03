@@ -28,10 +28,10 @@ interface ApiService {
     fun postStore(
     ): Call<List<Store>>
 
-    @FormUrlEncoded
-    @DELETE("produk/api_tampil_all.php")
-    fun daleteShoes(
-    ): Call<List<Store>>
 
+    @GET("produk/api_hapus.php")
+    fun deleteShoes(
+        @Query("id") id:String
+    ): Call<ServerResponse>
 }
 
