@@ -96,5 +96,26 @@ class MainViewModel : ViewModel() {
             }
         })
     }
+
+    fun updateData() {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().updateStore()
+        client.enqueue(object : retrofit2.Callback<List<Store>> {
+            override fun onResponse(call: Call<List<Store>>, response: Response<List<Store>>) {
+                if (response.isSuccessful) {
+                    _isLoading.value = false
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        _store.value = responseBody
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<Store>>, t: Throwable) {
+                _isLoading.value = false
+                Log.d("Respons::::::::", t.message.toString())
+            }
+        })
+    }
 }
 

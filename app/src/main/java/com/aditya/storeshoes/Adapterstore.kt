@@ -2,6 +2,7 @@ package com.aditya.storeshoes
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View.OnClickListener
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aditya.storeshoes.databinding.ActivityMainBinding
 import com.aditya.storeshoes.databinding.ItemStoreBinding
 import com.bumptech.glide.Glide
+
+
 
 class Adapterstore(
     private val onClick: (Store) -> Unit,
@@ -28,6 +31,11 @@ class Adapterstore(
 
     override fun onBindViewHolder(holder: ViewHOlder, @SuppressLint("RecyclerView") position: Int) {
         holder.bind(getItem(position))
+
+//        holder.itemView.setOnClickListener { intent ->
+//            intent()
+//
+//        }
     }
 
     inner class ViewHOlder(

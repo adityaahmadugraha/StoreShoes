@@ -23,15 +23,19 @@ interface ApiService {
 //    ): Call<ServerResponse>
 
 
-    @FormUrlEncoded
-    @POST("produk/api_tampil_all.php")
-    fun postStore(
-    ): Call<List<Store>>
-
 
     @GET("produk/api_hapus.php")
     fun deleteShoes(
         @Query("id") id:String
     ): Call<ServerResponse>
+
+    @GET("produk/api_edit.php")
+    fun updateStore(
+    ): Call<List<Store>>
+
+    @POST("produk/api_tampil_all.php")
+    fun postStore(
+    ): Call<List<Store>>
+
 }
 

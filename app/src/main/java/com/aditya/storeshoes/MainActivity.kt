@@ -66,24 +66,38 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-
-
-
         getData()
 
         viewModel.isLoading.observe(this@MainActivity)
         { isLoading ->
             binding.progressBar.isVisible = isLoading
+
         }
         binding.imgDelete.setOnClickListener()
         {
             val intent = Intent(this@MainActivity, ActivityPut::class.java)
             startActivity(intent)
         }
+
+        binding.imgEdit.setOnClickListener(){
+            val intent = Intent( this@MainActivity, ActivityUpdate::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getData() {
         viewModel.getStore()
+        viewModel.store.observe(this@MainActivity) { listData ->
+            Log.d("Response::::::", "onCreate: $listData")
+            mAdapter.submitList(listData)
+            binding.rvStore.adapter = mAdapter
+            binding.rvStore.layoutManager = LinearLayoutManager(this@MainActivity)
+            binding.rvStore.setHasFixedSize(true)
+        }
+    }
+
+    private fun updateData() {
+        viewModel.updateData()
         viewModel.store.observe(this@MainActivity) { listData ->
             Log.d("Response::::::", "onCreate: $listData")
             mAdapter.submitList(listData)
