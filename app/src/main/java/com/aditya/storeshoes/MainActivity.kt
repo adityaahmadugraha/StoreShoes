@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent( this@MainActivity, ActivityUpdate::class.java)
             startActivity(intent)
         }
+
     }
 
     private fun getData() {
@@ -96,14 +97,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateData() {
-        viewModel.updateData()
-        viewModel.store.observe(this@MainActivity) { listData ->
-            Log.d("Response::::::", "onCreate: $listData")
-            mAdapter.submitList(listData)
-            binding.rvStore.adapter = mAdapter
-            binding.rvStore.layoutManager = LinearLayoutManager(this@MainActivity)
-            binding.rvStore.setHasFixedSize(true)
-        }
-    }
+//    private fun updateSepatu() {
+//        viewModel.updateSepatu()
+//        viewModel.store.observe(this@MainActivity) { listData ->
+//            Log.d("Response::::::", "onCreate: $listData")
+//            mAdapter.submitList(listData)
+//            binding.rvStore.adapter = mAdapter
+//            binding.rvStore.layoutManager = LinearLayoutManager(this@MainActivity)
+//            binding.rvStore.setHasFixedSize(true)
+//        }
+//    }
 }

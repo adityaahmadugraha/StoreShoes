@@ -1,5 +1,6 @@
 package com.aditya.storeshoes
 
+import androidx.lifecycle.LiveData
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -29,13 +30,32 @@ interface ApiService {
         @Query("id") id:String
     ): Call<ServerResponse>
 
-    @GET("produk/api_edit.php")
-    fun updateStore(
-    ): Call<List<Store>>
+//    @GET("produk/api_edit.php")
+//    fun updateStore(
+//    ): Call<List<Store>>
+
+    @POST("produk/api_edit.php")
+    fun updateShoes(
+        @Body update: UpdateSepatu
+    ): Call<ServerResponse>
+
+//    @POST("produk/api_edit.php")
+//    fun updateShoes(
+//        @Body update: Unit
+//    ): Call<ServerResponse>
+
+
+
+//    @POST("produk/api_tambah.php")
+//    fun inputShoes(
+//        @Body input : InputSepatu
+//    ): Call<ServerResponse>
 
     @POST("produk/api_tampil_all.php")
     fun postStore(
     ): Call<List<Store>>
+
+//    abstract fun updateShoes(): Any
 
 }
 

@@ -6,63 +6,174 @@
     android:layout_height="match_parent"
     tools:context=".ActivityUpdate">
 
-
-    <EditText
-        android:id="@+id/edt_nama"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tx_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Masukan Nama Sepatu"
+        android:layout_marginTop="8dp"
+        android:text="Isi Kolom diatas"
+        app:counterEnabled="true"
         android:textColor="@color/black"
+        android:textStyle="italic"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:inputType="number"
-        android:id="@+id/edt_nomor"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtu_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:lines="1"
+            android:inputType="number"
+            android:text="Masukan ID"
+            android:textStyle="italic"
+            app:helperText="@string/Required"
+            tools:ignore="ExtraText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tx_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Masukan Nomor Sepatu"
+        android:layout_marginTop="8dp"
+        app:counterEnabled="true"
+        android:text="Isi Kolom diatas"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nama" />
+        app:layout_constraintTop_toBottomOf="@+id/tx_id">
 
-    <EditText
-        android:id="@+id/edt_warna"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtu_nama"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:lines="2"
+            android:text="Masukan Nama"
+            android:textStyle="italic"
+            app:helperText="@string/Required"
+            tools:ignore="ExtraText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tx_nomor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Masukan warna sepatu"
+        android:layout_marginTop="8dp"
+        android:text="Isi Kolom diatas"
+        app:counterEnabled="true"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nomor" />
+        app:layout_constraintTop_toBottomOf="@+id/tx_nama">
 
-    <EditText
-        android:id="@+id/edt_harga"
-        android:inputType="number"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtu_nomor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:lines="3"
+            android:inputType="number"
+            android:text="Masukan Nomor"
+            android:textStyle="italic"
+            app:helperText="@string/Required"
+            tools:ignore="ExtraText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tx_warna"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Masukan Harga Sepatu"
-        app:layout_constraintEnd_toEndOf="@+id/edt_warna"
-        app:layout_constraintStart_toStartOf="@+id/edt_warna"
-        app:layout_constraintTop_toBottomOf="@+id/edt_warna" />
-
-    <EditText
-        android:id="@+id/edt_img"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Inputkan Link Image Sepatu"
+        android:text="Isi Kolom diatas"
+        android:textColor="@color/black"
+        app:counterEnabled="true"
+        android:textStyle="italic"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_harga" />
+        app:layout_constraintTop_toBottomOf="@+id/tx_nomor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtu_warna"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:lines="4"
+            android:text="Masukan Warna"
+            android:textStyle="italic"
+            app:helperText="@string/Required"
+            tools:ignore="ExtraText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tx_harga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Isi Kolom diatas"
+        android:textColor="@color/black"
+        app:counterEnabled="true"
+        android:textStyle="italic"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx_warna">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtu_harga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:lines="5"
+            android:text="Masukan Harga"
+            android:textStyle="italic"
+            app:helperText="@string/Required"
+            tools:ignore="ExtraText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tx_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Isi Kolom diatas"
+        android:textColor="@color/black"
+        app:counterEnabled="true"
+        android:textStyle="italic"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx_harga">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtu_img"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:lines="6"
+            android:text="Masukan Image"
+            android:textStyle="italic"
+            app:helperText="@string/Required"
+            tools:ignore="ExtraText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
-        android:id="@+id/btn_edit"
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -72,32 +183,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.92" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"
-        tools:visibility="visible"
-        />
+        tools:visibility="visible" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tv_response"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        android:text="Data Berhasil di ubah"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="15sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

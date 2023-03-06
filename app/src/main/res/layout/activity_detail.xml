@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityDetail">
+    tools:context=".ActivityDetail"
+    tools:ignore="MissingClass">
 
     <ImageView
         android:id="@+id/img_detail"
@@ -13,7 +14,8 @@
         android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass" />
 
     <TextView
         android:id="@+id/tv_price"

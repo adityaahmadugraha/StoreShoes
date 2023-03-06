@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">StoreShoes</string>
+    <string name="Required">Required</string>
 </resources>

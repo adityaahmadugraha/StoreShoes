@@ -41,6 +41,7 @@ class ActivityPut : AppCompatActivity() {
                 inputSepatu
             )
 
+
             viewModel.inputSepatu.observe(this@ActivityPut) {
                 Log.d("Response", it.toString())
                 if (it.status) {
