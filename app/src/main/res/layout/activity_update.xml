@@ -7,6 +7,7 @@
     tools:context=".ActivityUpdate">
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:id="@+id/tx_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,6 +37,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:id="@+id/tx_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
-            android:lines="2"
+            android:lines="1"
             android:text="Masukan Nama"
             android:textStyle="italic"
             app:helperText="@string/Required"
@@ -63,6 +65,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:id="@+id/tx_nomor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
-            android:lines="3"
+            android:lines="1"
             android:inputType="number"
             android:text="Masukan Nomor"
             android:textStyle="italic"
@@ -91,6 +94,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:id="@+id/tx_warna"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -108,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
-            android:lines="4"
+            android:lines="1"
             android:text="Masukan Warna"
             android:textStyle="italic"
             app:helperText="@string/Required"
@@ -118,6 +122,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:id="@+id/tx_harga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -135,7 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
-            android:lines="5"
+            android:lines="1"
             android:text="Masukan Harga"
             android:textStyle="italic"
             app:helperText="@string/Required"
@@ -145,6 +150,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:id="@+id/tx_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -163,7 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
-            android:lines="6"
+            android:lines="1"
             android:text="Masukan Image"
             android:textStyle="italic"
             app:helperText="@string/Required"
