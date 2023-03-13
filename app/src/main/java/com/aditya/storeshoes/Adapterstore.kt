@@ -1,17 +1,11 @@
 package com.aditya.storeshoes
 
 import android.annotation.SuppressLint
-import android.app.Dialog
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View.OnClickListener
 import android.view.ViewGroup
-import android.view.ViewParent
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.aditya.storeshoes.databinding.ActivityMainBinding
 import com.aditya.storeshoes.databinding.ItemStoreBinding
 import com.bumptech.glide.Glide
 
