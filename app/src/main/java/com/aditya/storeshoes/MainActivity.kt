@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mAdapter: Adapterstore
     private lateinit var viewModel: MainViewModel
-//    private lateinit var alertDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,12 +23,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.lySwip.setOnRefreshListener {
-//          lifecycleScope.launch {
-//              delay(500)
+
             binding.lySwip.isRefreshing = false
             getData()
         }
-//        }
 
 
         viewModel = ViewModelProvider(
@@ -38,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         mAdapter = Adapterstore(
             onClick = { store ->
-//            val intent = if (while == 1) {
+
                 Intent(this@MainActivity, ActivityDetail::class.java).also {
                     it.putExtra("id", store.id)
                     it.putExtra("nama", store.nama)
@@ -79,8 +76,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.imgEdit.setOnClickListener(){
-            val intent = Intent( this@MainActivity, ActivityUpdate::class.java)
+        binding.imgEdit.setOnClickListener() {
+            val intent = Intent(this@MainActivity, ActivityUpdate::class.java)
             startActivity(intent)
         }
 
@@ -96,15 +93,4 @@ class MainActivity : AppCompatActivity() {
             binding.rvStore.setHasFixedSize(true)
         }
     }
-
-//    private fun updateSepatu() {
-//        viewModel.updateSepatu()
-//        viewModel.store.observe(this@MainActivity) { listData ->
-//            Log.d("Response::::::", "onCreate: $listData")
-//            mAdapter.submitList(listData)
-//            binding.rvStore.adapter = mAdapter
-//            binding.rvStore.layoutManager = LinearLayoutManager(this@MainActivity)
-//            binding.rvStore.setHasFixedSize(true)
-//        }
-//    }
 }

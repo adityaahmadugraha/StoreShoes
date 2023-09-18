@@ -10,12 +10,10 @@ import com.aditya.storeshoes.databinding.ItemStoreBinding
 import com.bumptech.glide.Glide
 
 
-
 class Adapterstore(
     private val onClick: (Store) -> Unit,
     private val onLongClick: (Store) -> Unit
 ) : ListAdapter<Store, Adapterstore.ViewHOlder>(DIF_CALLBACK) {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHOlder {
         val binding = ItemStoreBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -26,10 +24,6 @@ class Adapterstore(
     override fun onBindViewHolder(holder: ViewHOlder, @SuppressLint("RecyclerView") position: Int) {
         holder.bind(getItem(position))
 
-//        holder.itemView.setOnClickListener { intent ->
-//            intent()
-//
-//        }
     }
 
     inner class ViewHOlder(
